@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.nusantarian.maos.R;
 
-public class Splash extends AppCompatActivity {
+public class LandingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_landing);
     }
 }
