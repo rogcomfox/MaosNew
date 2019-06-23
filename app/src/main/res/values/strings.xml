@@ -17,4 +17,19 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="i_accept_the_license_and_agreement">I Accept the License and Agreement</string>
+    <string name="find_your_account_using_email_adress">Find Your Account Using Email Adress</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="start">Start</string>
+    <string name="my_profile">My Profile</string>
+    <string name="history">History</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="log_out">Log Out</string>
 </resources>
