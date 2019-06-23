@@ -24,7 +24,7 @@
     <string name="phone_number">Phone Number</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="i_accept_the_license_and_agreement">I Accept the License and Agreement</string>
-    <string name="find_your_account_using_email_adress">Find Your Account Using Email Adress</string>
+    <string name="find_your_account_using_email_adress">Find Your Account Using Email Address</string>
     <string name="reset_password">Reset Password</string>
     <string name="start">Start</string>
     <string name="my_profile">My Profile</string>
@@ -32,4 +32,7 @@
     <string name="help">Help</string>
     <string name="about">About</string>
     <string name="log_out">Log Out</string>
+    <string name="maos">MAOS</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="update_password">Update Password</string>
 </resources>
