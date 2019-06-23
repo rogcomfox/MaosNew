@@ -13,15 +13,14 @@ import com.nusantarian.maos.R;
 
 public class LandingActivity extends AppCompatActivity {
 
-    private FirebaseUser user;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
 
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
 
         Button btn_login = findViewById(R.id.btn_login);
         Button btn_register = findViewById(R.id.btn_register);
@@ -30,14 +29,12 @@ public class LandingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LandingActivity.this, LoginActivity.class));
-                finish();
             }
         });
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LandingActivity.this, RegisterActivity.class));
-                finish();
             }
         });
     }
@@ -45,7 +42,8 @@ public class LandingActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (user != null){
+        FirebaseUser mUser = mAuth.getCurrentUser();
+        if (mUser != null){
             startActivity(new Intent(LandingActivity.this, MainActivity.class));
             finish();
         }
