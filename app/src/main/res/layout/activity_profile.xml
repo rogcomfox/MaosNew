@@ -26,15 +26,131 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_profpic"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"/>
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:textSize="28sp"
+                android:layout_marginTop="20dp"
+                android:textSize="24sp"
                 android:textColor="@color/colorWhite"
+                android:layout_below="@id/img_profpic"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"/>
+                android:layout_marginEnd="20dp"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@id/tv_name"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/tv_latest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_email"
+                android:text="@string/latest_patient_scan_result"
+                android:textSize="20sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_latest"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="70dp"
+                android:textSize="14sp"
+                android:textColor="@color/colorWhite"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/tv_patientname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_date"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="50dp"
+                android:text="@string/full_name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"/>
+            <TextView
+                android:id="@+id/tv_txtname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_date"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/tv_patientname"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="50dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/tv_patientbirth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_patientname"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/birth"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tv_txtbirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_patientname"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="58dp"
+                android:layout_toEndOf="@id/tv_patientbirth"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/tv_patientstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_patientbirth"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/status"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tv_txtstatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_patientbirth"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="47dp"
+                android:layout_toEndOf="@id/tv_patientstatus"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:textAlignment="center"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

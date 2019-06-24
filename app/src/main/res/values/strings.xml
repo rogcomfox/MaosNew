@@ -35,4 +35,7 @@
     <string name="maos">MAOS</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="update_password">Update Password</string>
+    <string name="latest_patient_scan_result">Latest Patient Scan Result</string>
+    <string name="birth">Birth</string>
+    <string name="status">Status</string>
 </resources>

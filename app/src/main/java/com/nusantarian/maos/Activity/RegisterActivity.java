@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.nusantarian.maos.R;
 
 import java.util.Objects;
@@ -31,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private String name, email, phone, password, confpass, uid;
     private CheckBox checkBox;
+    private StorageReference mStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     uid = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                                     mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                                    mStorage = FirebaseStorage.getInstance().getReference().child("Profil Images").child(uid);
                                     progressBar.setVisibility(View.VISIBLE);
                                     progressBar.getProgress();
                                     mDatabase.child("name").setValue(name);
