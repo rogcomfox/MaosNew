@@ -1,6 +1,7 @@
 package com.nusantarian.maos.Activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,8 +24,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.nusantarian.maos.R;
 
+import java.io.File;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -34,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String name, email, phone, password, confpass, uid;
     private CheckBox checkBox;
     private StorageReference mStorage;
+    private Uri mImageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +115,19 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     uid = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                                     mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-                                    mStorage = FirebaseStorage.getInstance().getReference().child("Profil Images").child(uid);
+                                    mImageUri = Uri.fromFile(new File("D:\\Nusantarian\\AndroidX\\Maos\\app\\src\\main\\res\\drawable\\default_propfpic.png"));
+                                    mStorage = FirebaseStorage.getInstance().getReference().child("Profil Images").child(uid).child("images/profil.png");
+                                    mStorage.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                            Toast.makeText(RegisterActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(RegisterActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                                     progressBar.setVisibility(View.VISIBLE);
                                     progressBar.getProgress();
                                     mDatabase.child("name").setValue(name);

@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
                 builder.show();break;
             case R.id.nav_profile:
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-                finish();break;
+                break;
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

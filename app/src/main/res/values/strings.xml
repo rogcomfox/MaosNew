@@ -34,8 +34,12 @@
     <string name="log_out">Log Out</string>
     <string name="maos">MAOS</string>
     <string name="edit_profile">Edit Profile</string>
-    <string name="update_password">Update Password</string>
     <string name="latest_patient_scan_result">Latest Patient Scan Result</string>
-    <string name="birth">Birth</string>
+    <string name="birth">Age</string>
     <string name="status">Status</string>
+    <string name="null_date">01/01/1970</string>
+    <string name="please_fill_your_new_password">Please Fill Your New Password</string>
+    <string name="new_password">New Password</string>
+    <string name="update_password">Update Password</string>
+    <string name="update_profile">Update Profile</string>
 </resources>

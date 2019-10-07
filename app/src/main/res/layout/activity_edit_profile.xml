@@ -25,7 +25,8 @@
         android:layout_height="110dp"
         android:layout_below="@id/appbar"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/default_profpic"/>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_name"
         android:layout_width="match_parent"
